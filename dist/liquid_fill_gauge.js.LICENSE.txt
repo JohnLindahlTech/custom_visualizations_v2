@@ -1,0 +1,8 @@
+/*!
+ * @license Open source under BSD 2-clause (http://choosealicense.com/licenses/bsd-2-clause/)
+ * Copyright (c) 2015, Curtis Bratton
+ * All rights reserved.
+ *
+ * This file was copied from https://raw.githubusercontent.com/ugomeda/d3-liquid-fill-gauge/master/liquidFillGauge.js
+ * and modified for use in the Looker example custom visualizations project.
+ */

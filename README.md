@@ -1,8 +1,4 @@
-**A Note on Support**
-
-The visualizations provided in this repository are intended to serve as examples. Looker's support team does not troubleshoot issues relating to these example visualizations or your custom visualization code. Supported visualizations are downloadable through the [Looker Marketplace](https://docs.looker.com/data-modeling/marketplace). 
-
-----
+# My personal fork of the examples
 
 # Looker Visualization API Examples [![Build Status](https://travis-ci.org/looker/visualization-api-examples.svg?branch=master)](https://travis-ci.org/looker/visualization-api-examples)
 
@@ -16,17 +12,12 @@ The visualizations provided in this repository are intended to serve as examples
 
 # Getting Started
 
-1. [Ensure you have Yarn installed.](https://yarnpkg.com)
-2. Run `yarn`
+1. Make sure you have node + npm installed.
+2. Run `npm install`
 3. :boom: start creating!
 
 # Commands
 
-* `yarn build` - Compiles the code in `/src` to `/dist` via webpack
-* `yarn lint` - Runs TSLint across the codebase.
-* `yarn lint-fix` - Runs TSLint and attempts to fix any linter errors automatically.
+- `npm run build` - Compiles the code in `/src` to `/dist` via webpack
 
-
-----
-
-
+---

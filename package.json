@@ -11,42 +11,30 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch --progress",
-    "lint": "tslint --project tsconfig.json --format stylish 'src/**/*.ts'",
-    "lint-fix": "tslint --fix --project tsconfig.json  --format stylish 'src/**/*.ts'",
-    "test": "jest"
+    "#lint": "tslint --project tsconfig.json --format stylish 'src/**/*.ts'",
+    "#lint-fix": "tslint --fix --project tsconfig.json  --format stylish 'src/**/*.ts'"
   },
   "author": "",
   "private": true,
   "devDependencies": {
-    "@types/jquery": "^3.3.31",
-    "css-loader": "^0.28.11",
-    "d3": "^7.8.5",
-    "jquery": "^3.3.1",
-    "jsdom": "^11.11.0",
-    "pivottable": "^2.20.0",
-    "subtotal-multiple-aggregates": "4mile/subtotal-multiple-aggregates",
-    "to-string-loader": "^1.1.5",
-    "ts-loader": "6.2.1",
-    "tslint": "5.8.0",
-    "tslint-config-standard": "7.0.0",
-    "uglifyjs-webpack-plugin": "^1.2.5",
-    "webpack": "4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "3.9.0"
+    "@types/d3": "7.4.3",
+    "ts-loader": "9.5.2",
+    "webpack": "5.98.0",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.1"
   },
   "dependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/preset-react": "^7.7.0",
-    "@types/d3": "^5.0.0",
-    "@types/d3-sankey": "^0.7.4",
-    "babel-loader": "^8.0.6",
-    "d3-sankey": "^0.10.4",
-    "jest": "^29.7.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.7.0",
-    "react-responsive-carousel": "^3.1.51",
-    "ssf": "^0.11.2",
-    "typescript": "^5.3.3"
+    "@babel/core": "7.26.10",
+    "@babel/preset-env": "7.26.9",
+    "@babel/preset-react": "7.26.3",
+    "@types/d3-sankey": "0.12.4",
+    "babel-loader": "10.0.0",
+    "d3": "7.9.0",
+    "d3-sankey": "0.12.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-responsive-carousel": "3.2.23",
+    "ssf": "0.11.2",
+    "typescript": "5.8.3"
   }
 }
