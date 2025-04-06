@@ -18,7 +18,7 @@ function sumFieldsData(field: string, obj: any) {
     return null;
   }
   const data = recursivelyExtractFieldsData(field, obj);
-  const values = data.flat().filter(Boolean);
+  const values = data.flat(Infinity).filter(Boolean);
   // TODO Error handle non-numeric values
   return values.reduce((acc: number, val: any) => {
     if (Number.isNaN(Number(val))) {
