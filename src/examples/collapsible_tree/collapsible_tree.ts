@@ -69,7 +69,7 @@ function descend(obj: any, depth: number = 0) {
   return arr;
 }
 
-function burrow(table: any, taxonomy: any[]) {
+function burrow(table: any, taxonomy: any[], config: any) {
   // create nested object
   const obj: any = {};
 
@@ -88,7 +88,7 @@ function burrow(table: any, taxonomy: any[]) {
 
   // use descend to create nested children arrays
   return {
-    name: "root",
+    name: config?.root_label ?? "root",
     children: descend(obj, 1),
     depth: 0,
   };
@@ -109,6 +109,11 @@ const vis: CollapsibleTreeVisualization = {
       default: "#fff",
       type: "string",
       display: "color",
+    },
+    root_label: {
+      label: "Root Label",
+      type: "string",
+      default: "Root",
     },
     number_field: {
       label: "Number Field (get id by inspecting SQL)",
@@ -156,6 +161,15 @@ const vis: CollapsibleTreeVisualization = {
       step: 10,
       default: 180,
     },
+    offset: {
+      label: "Offset (how much indentation from the left for entire tree)",
+      type: "number",
+      display: "range",
+      min: 0,
+      max: 1000,
+      step: 10,
+      default: 0,
+    },
   },
 
   // Set up the initial state of the visualization
@@ -190,13 +204,20 @@ const vis: CollapsibleTreeVisualization = {
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
     const width = element.clientWidth - margin.left - margin.right;
     const height = element.clientHeight - margin.top - margin.bottom;
-    const nested = burrow(data, queryResponse.fields.dimension_like);
+    const nested = burrow(data, queryResponse.fields.dimension_like, config);
 
     const svg = this.svg!.html("")
       .attr("width", width + margin.right + margin.left)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .attr(
+        "transform",
+        "translate(" +
+          (margin.left + (config?.offset ?? 0)) +
+          "," +
+          margin.top +
+          ")"
+      );
 
     // declares a tree layout and assigns the size
     const treemap = d3.tree().size([height, width]);
